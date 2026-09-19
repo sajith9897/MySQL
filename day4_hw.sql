@@ -17,12 +17,12 @@ WHERE course = 'Web Development'
 
 -- Increase the fees_paid by 1000 for students enrolled in 'Data Science'.
 UPDATE students 
-SET fees_paid = 10000
+SET fees_paid = fees_paid + 1000
 WHERE course =  'Data Science'
 
 -- Update both status to 'Inactive' and reduce fees_paid by 500 for the student whose id is 3.
 UPDATE students
-SET status = 'Inactive', fees_paid = 500
+SET status = 'Inactive', fees_paid = fees_paid - 500
 WHERE id = 3
 
 -- Delete the student whose id is 2.
