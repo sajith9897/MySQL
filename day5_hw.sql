@@ -1,0 +1,26 @@
+INSERT INTO books (id, title, author, price, stock)
+VALUES (1, 'The Alchemist', 'Paulo Coelho', 350, 50), (2, 'Atomic Habits', 'James Clear', 450, 40), (3, 'The Psychology of Money', 'Morgan Housel', 400, 30), (4, 'Ikigai', 'Francesc Miralles', 300, 60), (5, 'Deep Work', 'Cal Newport', 500, 20)
+
+
+-- Display all books that cost less than 450 and have stock more than 30.
+SELECT * FROM books
+WHERE price < 450 AND stock > 30;
+
+-- Update the stock to 45 and reduce the price to 420 for the book titled ‘Deep Work’.
+UPDATE books
+SET stock = 45, price = price - 80
+WHERE title = 'Deep Work'
+
+-- Delete the book titled ‘Ikigai’.
+DELETE FROM books
+WHERE title = 'Ikigai'
+
+-- Show the average book price and total number of books currently in the table.2
+SELECT AVG(price) AS 'average_book_price',
+COUNT(books) AS 'total_books'
+FROM books
+
+-- Display the top 3 most expensive books available.
+SELECT * FROM books
+ORDER BY price DESC 
+LIMIT 3;
